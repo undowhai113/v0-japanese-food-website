@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "Nhà hàng có nhận đặt tiệc không?",
     answer:
-      "Có, KYO nhận đặt tiệc cho nhóm từ 10-50 người. Vui lòng liên hệ trước ít nhất 3 ngày để chúng tôi chuẩn bị tốt nhất. Chúng tôi có các gói tiệc đa dạng phù hợp với nhiều ngân sách.",
+      "Có, Unagi nhận đặt tiệc cho nhóm từ 10-50 người. Vui lòng liên hệ trước ít nhất 3 ngày để chúng tôi chuẩn bị tốt nhất. Chúng tôi có các gói tiệc đa dạng phù hợp với nhiều ngân sách.",
   },
   {
     question: "Nguyên liệu có được nhập khẩu từ Nhật không?",
@@ -51,7 +51,7 @@ export function FAQSection() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Câu hỏi thường gặp
           </h2>
-          <p className="text-muted-foreground">Những thắc mắc phổ biến của khách hàng về KYO</p>
+          <p className="text-muted-foreground">Những thắc mắc phổ biến của khách hàng về Unagi</p>
         </motion.div>
 
         <motion.div variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
