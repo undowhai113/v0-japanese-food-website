@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google"
+import { Roboto, Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-provider"
@@ -16,6 +16,12 @@ const shipporiMincho = Shippori_Mincho({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-shippori",
+})
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-roboto",
 })
 
 export const metadata: Metadata = {
@@ -47,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body className={`${zenKaku.variable} ${shipporiMincho.variable} font-sans antialiased`}>
+      <body className={`${zenKaku.variable} ${shipporiMincho.variable} ${roboto.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>

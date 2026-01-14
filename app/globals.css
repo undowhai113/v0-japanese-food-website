@@ -155,7 +155,19 @@
     @apply bg-background text-foreground;
   }
 
+  body {
+    --font-body: var(--font-roboto);
+  }
+
   /* Smooth transitions for theme switching */
+  p,
+  .text-muted-foreground,
+  .prose,
+  .prose p,
+  .prose li {
+    font-family: var(--font-body);
+  }
+
   html {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
