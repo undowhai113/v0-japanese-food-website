@@ -1,16 +1,13 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Loader2, AlertCircle, X, BookOpen } from "lucide-react"
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Loader2, AlertCircle, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 
 // PDF Configuration
-const PROXY_URL = "https://api.codetabs.com/v1/proxy?quest="
-const MAIN_PDF_URL = "https://pizza4ps.com/wp-content/uploads/2024/11/Peace-Day_Zine_Preview_25112024zz.pdf"
-const FALLBACK_PDF_URL =
-  "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
+const MENU_PDF_URL = "/menu/menu.pdf"
 
 declare global {
   interface Window {
@@ -61,7 +58,7 @@ export function FlipMenuModal({ isOpen, onClose }: FlipMenuModalProps) {
           await new Promise((resolve) => (flipScript.onload = resolve))
         }
 
-        loadPdf(MAIN_PDF_URL)
+        loadPdf(MENU_PDF_URL)
       } catch (err) {
         console.error("Library load error:", err)
         setError(t("flipMenu.errorLibrary"))
@@ -72,14 +69,13 @@ export function FlipMenuModal({ isOpen, onClose }: FlipMenuModalProps) {
   }, [isOpen, t])
 
   // Load PDF
-  const loadPdf = async (url: string, isFallback = false) => {
+  const loadPdf = async (url: string) => {
     try {
       setLoading(true)
       setError(null)
       setLoadingProgress(10)
 
-      const finalUrl = PROXY_URL + url
-      const loadingTask = window.pdfjsLib.getDocument(finalUrl)
+      const loadingTask = window.pdfjsLib.getDocument(url)
 
       loadingTask.onProgress = (p: { loaded: number; total: number }) => {
         if (p.total > 0) {
@@ -93,12 +89,8 @@ export function FlipMenuModal({ isOpen, onClose }: FlipMenuModalProps) {
       setLoadingProgress(50)
     } catch (err) {
       console.error("PDF load error:", err)
-      if (!isFallback) {
-        loadPdf(FALLBACK_PDF_URL, true)
-      } else {
-        setError(t("flipMenu.errorPdf"))
-        setLoading(false)
-      }
+      setError(t("flipMenu.errorPdf"))
+      setLoading(false)
     }
   }
 
@@ -395,7 +387,6 @@ export function FlipMenuButton() {
         size="lg"
         className="border-primary text-primary hover:bg-primary/10 bg-transparent gap-2"
       >
-        <BookOpen className="w-5 h-5" />
         {t("flipMenu.viewFullMenu")}
       </Button>
       <FlipMenuModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
