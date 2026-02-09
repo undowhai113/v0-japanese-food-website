@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Facebook, Instagram, Phone, Mail, MapPin, Clock, ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -53,9 +54,18 @@ export function Footer() {
         >
           {/* Brand Column */}
           <motion.div variants={staggerItem} className="lg:col-span-2">
-            <Link href="#home" className="inline-block mb-6">
-              <span className="font-serif text-3xl font-bold text-gold">Unagista</span>
-              <span className="block text-sm text-muted-foreground">Premium Japanese Unagi</span>
+            <Link href="#home" className="inline-flex items-center gap-3 mb-6 group">
+              <Image
+                src="/assets/LOGO-UNAGI-2.png"
+                alt="Unagista Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
+              <div>
+                <span className="font-serif text-3xl font-bold text-gold">Unagista</span>
+                <span className="block text-sm text-muted-foreground">Premium Japanese Unagi</span>
+              </div>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">{t("footer.description")}</p>
 
@@ -63,18 +73,18 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>45 Đồng Khởi, Quận 1, TP.HCM</span>
+                <span>6A Thái Văn Lung, Phường Sài Gòn, TP. HCM</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
-                <a href="tel:19008686" className="hover:text-gold transition-colors">
-                  1900 8686
+                <a href="tel:0908792289" className="hover:text-gold transition-colors">
+                  0908.79.2289
                 </a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
-                <a href="mailto:hello@unagista.vn" className="hover:text-gold transition-colors">
-                  hello@unagista.vn
+                <a href="mailto:Service@unagi.vn" className="hover:text-gold transition-colors">
+                  Service@unagi.vn
                 </a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">

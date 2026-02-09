@@ -52,9 +52,9 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const contactInfo = [
-    { icon: Phone, label: t("contact.hotline"), value: "1900 8686", href: "tel:19008686" },
-    { icon: Mail, label: t("contact.email"), value: "hello@unagista.vn", href: "mailto:hello@unagista.vn" },
-    { icon: MapPin, label: t("contact.address"), value: "45 Đồng Khởi, Q.1, TP.HCM", href: "#" },
+    { icon: Phone, label: t("contact.hotline"), value: "0908.79.2289", href: "tel:0908792289" },
+    { icon: Mail, label: t("contact.email"), value: "Service@unagi.vn", href: "mailto:Service@unagi.vn" },
+    { icon: MapPin, label: t("contact.address"), value: "6A Thái Văn Lung, Phường Sài Gòn, TP. HCM", href: "https://maps.app.goo.gl/tV9rE5v9Xf9mX1X99" },
     { icon: Clock, label: t("contact.hours"), value: "11:00 - 21:30", href: "#" },
   ]
 
@@ -124,7 +124,7 @@ export function ContactSection() {
             {/* Map Embed */}
             <div className="aspect-video rounded-lg overflow-hidden bg-muted">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4946681007426!2d106.70123857486956!3d10.775847989387898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4b3330bcc7%3A0x4db964d76bf6e18e!2zNDUgxJDhu5NuZyBLaOG7n2ksIELhur9uIE5naMOpLCBRdeG6rW4gMSwgSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2s!4v1705000000000!5m2!1svi!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4225781037258!2d106.7051242!3d10.7789112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f138e315263%3A0xdfbd3e56fc9db82d!2sUNAGI%20STATION%20-%20Premium%20Japanese%20Unagi!5e0!3m2!1svi!2s!4v1770624501187!5m2!1svi!2s"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

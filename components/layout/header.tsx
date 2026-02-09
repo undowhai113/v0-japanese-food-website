@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Sun, Moon, Phone, Globe } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -63,8 +64,15 @@ export function Header() {
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 transition={{ duration: 0.3 }}
-                className="flex items-center"
+                className="flex items-center gap-3"
               >
+                <Image
+                  src="/assets/LOGO-UNAGI-2.png"
+                  alt="Unagista Logo"
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                />
                 <span className="font-serif text-2xl md:text-3xl font-bold text-gold tracking-tight">Unagista</span>
               </motion.div>
             </Link>

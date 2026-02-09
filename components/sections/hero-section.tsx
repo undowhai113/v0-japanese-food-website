@@ -20,13 +20,15 @@ export function HeroSection() {
       {/* Background with Parallax */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 w-full h-full">
-          <iframe
-            src="https://www.youtube.com/embed/SYG60R2ArhU?si=roU_-0KOuCzmnM_w&autoplay=1&mute=1&loop=1&playlist=SYG60R2ArhU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-            title="Unagista Background Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] min-w-full min-h-full h-[56.25vw] pointer-events-none"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          >
+            <source src="/assets/video_background.mp4" type="video/mp4" />
+          </video>
         </div>
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/60" />
