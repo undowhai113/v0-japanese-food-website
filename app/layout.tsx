@@ -1,27 +1,21 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google"
+import { Montserrat, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-provider"
 import "./globals.css"
 
-const zenKaku = Zen_Kaku_Gothic_New({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-zen-kaku",
+const montserrat = Montserrat({
+  subsets: ["vietnamese", "latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
 })
 
-const shipporiMincho = Shippori_Mincho({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-shippori",
-})
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["500"],
-  variable: "--font-inter",
+const playfairDisplay = Playfair_Display({
+  subsets: ["vietnamese", "latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-playfair",
 })
 
 export const metadata: Metadata = {
@@ -53,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body className={`${zenKaku.variable} ${shipporiMincho.variable} ${inter.variable} font-sans antialiased`}>
+      <body className={`${montserrat.variable} ${playfairDisplay.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>

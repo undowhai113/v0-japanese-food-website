@@ -3,14 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
-  font-family: "TP Han Zi";
-  src: url("/fonts/TP-Han-Zi.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* Unagista - Luxury Japanese Unagi Restaurant Theme */
 :root {
   /* Light Mode - Custom KYO Theme */
@@ -98,10 +90,10 @@
 }
 
 @theme inline {
-  /* Updated fonts to Japanese-style typography */
-  --font-sans: "TP Han Zi", "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
-  --font-serif: "TP Han Zi", "Shippori Mincho", "Noto Serif JP", serif;
-  --font-mono: "TP Han Zi", "Geist Mono", "Geist Mono Fallback", monospace;
+  /* Updated fonts to Beautiful Vietnamese-style typography */
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -156,7 +148,7 @@
   }
 
   body {
-    --font-body: var(--font-inter);
+    --font-body: var(--font-montserrat);
   }
 
   /* Smooth transitions for theme switching */
